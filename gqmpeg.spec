@@ -39,15 +39,15 @@ rm -rf %{buildroot}
 
 %{find_lang} %{name}
 
-mkdir -p %{buildroot}%{_menudir}
-cat > %{buildroot}%{_menudir}/%{name} <<EOF
-?package(%{name}): \
- command="%{_bindir}/gqmpeg" \
- title="Gqmpeg" \
- longtitle="Graphical Frontend of Audio Players" \
- needs="x11" \
- icon="sound_section.png" \
- section="Multimedia/Sound"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application <<EOF
+Exec=%{_bindir}/gqmpeg 
+Name=Gqmpeg 
+Comment=Graphical Frontend of Audio Players 
+Icon=sound_section 
+Categories=Audio;
 EOF
 
 %post
@@ -68,5 +68,5 @@ rm -rf %{buildroot}
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*
 %{_mandir}/man1/*
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 
