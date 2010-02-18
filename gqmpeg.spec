@@ -12,6 +12,7 @@ URL: 		http://gqmpeg.sourceforge.net/
 BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 Source: 	ftp://osdn.dl.sourceforge.net/pub/sourceforge/g/gq/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		gqmpeg-0.91.1-no-translation.patch
+Patch1:		gqmpeg-0.91.1-fix-str-fmt.patch
 Buildrequires:	gtk2-devel >= 2.2.0
 BuildRequires:	png-devel
 
@@ -29,6 +30,7 @@ custom skins (looks).
 %prep
 %setup -q
 %patch0 -p1 -b .no-translation
+%patch1 -p0 -b .str
 
 %build
 %configure2_5x
@@ -48,7 +50,7 @@ Exec=%{_bindir}/gqmpeg
 Name=Gqmpeg 
 Comment=Graphical Frontend of Audio Players 
 Icon=sound_section 
-Categories=Audio;
+Categories=Audio;GTK;
 EOF
 
 %if %mdkversion < 200900
@@ -66,12 +68,9 @@ rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-, root, root)
-
 %doc README COPYING FAQ TODO SKIN-SPECS SKIN-SPECS-V1 plugin/README.plugin
 %{_bindir}/*
 %{_datadir}/%{name}
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*
 %{_mandir}/man1/*
-%{_datadir}/applications/mandriva-%{name}.desktop
-
