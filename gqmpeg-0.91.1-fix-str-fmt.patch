@@ -1,0 +1,11 @@
+--- src/ui_fileops.c.str	2010-02-18 10:47:55.000000000 +0100
++++ src/ui_fileops.c	2010-02-18 10:48:06.000000000 +0100
+@@ -47,7 +47,7 @@
+ 	gchar *text_l;
+ 
+ 	text_l = g_locale_from_utf8(text_utf8, -1, NULL, NULL, NULL);
+-	printf((text_l) ? text_l : text_utf8);
++	printf("%s", (text_l) ? text_l : text_utf8);
+ 	g_free(text_l);
+ }
+ 

@@ -1,0 +1,11 @@
+--- gqmpeg-0.91.1/src/playlist-window.c.no-translation	2004-04-03 18:32:11.000000000 +0800
++++ gqmpeg-0.91.1/src/playlist-window.c	2004-07-07 21:00:44.184864864 +0800
+@@ -102,7 +102,7 @@
+ };
+ 
+ static const gchar *playlist_view_titles[COLUMN_ELEMENT_COUNT] = {
+-	"",
++	" ",
+ 	N_("Title"),
+ 	N_("Album"),
+ 	N_("Artist"),
