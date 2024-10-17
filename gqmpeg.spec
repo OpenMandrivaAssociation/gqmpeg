@@ -8,7 +8,7 @@ Version: 	%{version}
 Release: 	%{release}
 License:	GPL
 Group: 		Sound
-URL: 		http://gqmpeg.sourceforge.net/
+URL: 		https://gqmpeg.sourceforge.net/
 BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 Source: 	ftp://osdn.dl.sourceforge.net/pub/sourceforge/g/gq/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		gqmpeg-0.91.1-no-translation.patch
