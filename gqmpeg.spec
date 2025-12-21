@@ -13,6 +13,11 @@ BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 Source: 	ftp://osdn.dl.sourceforge.net/pub/sourceforge/g/gq/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		gqmpeg-0.91.1-no-translation.patch
 Patch1:		gqmpeg-0.91.1-fix-str-fmt.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 Buildrequires:	gtk2-devel >= 2.2.0
 BuildRequires:	png-devel
 
