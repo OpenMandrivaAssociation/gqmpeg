@@ -1,5 +1,5 @@
 %define version 0.91.1
-%define release %mkrel 7
+%define release 8
 %define name 	gqmpeg
 
 Summary: 	Graphical Frontend to various music players
